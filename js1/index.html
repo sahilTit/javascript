@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .bg-black {
+        background-color: #212121;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div class="parent">
+      <div>Monday</div>
+      <div>Tuesday</div>
+      <div>wednasday</div>
+      <div>Thrusday</div>
+    </div>
+    <script>
+      const parent = document.querySelector(".parent");
+      console.log(parent.children);
+
+      for (let i = 0; i < parent.children.length; i++) {
+         console.log(parent.children[i].innerHTML);
+      }
+
+      // document.querySelector(divAll).style.backgroundColor = "red";
+    </script>
+  </body>
+</html>

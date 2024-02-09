@@ -25,16 +25,16 @@ if (playGame) {
 
 function validateGuess(guess) {
   if (isNaN(guess)) {
-    alert("please Enter a valid number");
+    alert("PLease enter a valid number");
   } else if (guess < 1) {
-    alert("please Enter a number more than 0");
+    alert("PLease enter a number more than 1");
   } else if (guess > 100) {
-    alert("please Enter a number less than 101");
+    alert("PLease enter a  number less than 100");
   } else {
     prevGuess.push(guess);
-    if (numGuess == 11) {
+    if (numGuess === 11) {
       displayGuess(guess);
-      displayMessage(`the random number was: ${randomNumber}`);
+      displayMessage(`Game Over. Random number was ${randomNumber}`);
       endGame();
     } else {
       displayGuess(guess);
@@ -45,20 +45,20 @@ function validateGuess(guess) {
 
 function checkGuess(guess) {
   if (guess === randomNumber) {
-    displayMessage("you guessed it right");
+    displayMessage(`You guessed it right`);
     endGame();
   } else if (guess < randomNumber) {
-    displayMessage("guess is too low ");
+    displayMessage(`Number is TOOO low`);
   } else if (guess > randomNumber) {
-    displayMessage("guess is to high ");
+    displayMessage(`Number is TOOO High`);
   }
 }
 
 function displayGuess(guess) {
   userInput.value = "";
-  guessSlot.innerHTML += `${guess} `;
+  guessSlot.innerHTML += `${guess}, `;
   numGuess++;
-  remaining.innerHTML = `${11 - numGuess}`;
+  remaining.innerHTML = `${11 - numGuess} `;
 }
 
 function displayMessage(message) {
@@ -82,18 +82,10 @@ function newGame() {
     prevGuess = [];
     numGuess = 1;
     guessSlot.innerHTML = "";
-    remaining.innerHTML = `${11 - numGuess}`;
+    remaining.innerHTML = `${11 - numGuess} `;
     userInput.removeAttribute("disabled");
     startOver.removeChild(p);
+
     playGame = true;
   });
 }
-document.querySelector("image").addEventListener(
-  "click",
-  (e) => {
-    console.log(e.target.parentNode);
-    let removeIt = e.target.parentNode;
-    removeIt.remove();
-  },
-  false
-);

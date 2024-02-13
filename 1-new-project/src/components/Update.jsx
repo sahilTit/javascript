@@ -1,53 +1,44 @@
-import { useState } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-const Form = () => {
+
+const Update = () => {
+  const [id, setId] = useState(0);
   const [studentid, setStudentId] = useState("");
   const [name, setName] = useState("");
   const [branch, setBranch] = useState("");
   const [year, setYear] = useState("");
-  const history = useNavigate();
 
-  const header = { "Acces-controll-origin": "*" };
+  const navigate = useNavigate();
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  const handleUpdate = (e) => {
+    e.preventDefault();
     axios
-      .post("https://65c9e6173b05d29307df36a0.mockapi.io/crud-sahil", {
+      .put(`https://65c9e6173b05d29307df36a0.mockapi.io/crud-sahil/${id}`, {
         studentid: studentid,
         name: name,
         branch: branch,
         year: year,
-        header,
       })
       .then(() => {
-        history("/table");
+        navigate("/table");
       });
-    // event.preventDefault();
-    // // console.log(studentid)
-    // let states =JSON.parse(localStorage.getItem("name")||"[]");
-    // let state = {
-    //   StudentId: studentid,
-    //   Name: name,
-    //   Branch: branch,
-    //   Year: year
-    // };
-    // // console.log(state);
-    // states.push(state);
-    // localStorage.setItem("name", JSON.stringify(states));
+  };
 
-    // const temp = ;
-    // console.log(temp)
-  }
+  useEffect(() => {
+    setId(localStorage.getItem("id"));
+    setStudentId(localStorage.getItem("studentid"));
+    setName(localStorage.getItem("name"));
+    setBranch(localStorage.getItem("branch"));
+    setYear(localStorage.getItem("year"));
+  }, []);
   return (
     <>
       <div className="big-body">
         <div className="container">
-          <form onSubmit={handleSubmit} id="form signup ">
-            <h2>Sign In</h2>
+          <form id="form signup ">
+            <h2>Update Data</h2>
             <div className="input-container">
-              {/* <label htmlFor="studentid">Student Id</label> */}
               <input
                 placeholder="student id"
                 value={studentid}
@@ -58,7 +49,6 @@ const Form = () => {
               />
             </div>
             <div className="input-container">
-              {/* <label htmlFor="name">Name</label> */}
               <input
                 value={name}
                 type="name"
@@ -69,7 +59,6 @@ const Form = () => {
               />
             </div>
             <div className="input-container">
-              {/* <label htmlFor="branch">Branch</label> */}
               <input
                 value={branch}
                 type="branch"
@@ -80,7 +69,6 @@ const Form = () => {
               />
             </div>
             <div className="input-container">
-              {/* <label htmlFor="year">Year</label> */}
               <input
                 placeholder="year"
                 value={year}
@@ -90,14 +78,14 @@ const Form = () => {
                 }}
               />
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit" onClick={handleUpdate}>
+              Update
+            </button>
           </form>
         </div>
       </div>
-      <Link to="/table">
-        <button className="seedata">See Data</button>
-      </Link>
     </>
   );
 };
-export default Form;
+
+export default Update;

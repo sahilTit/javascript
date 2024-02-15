@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Update = () => {
   const [id, setId] = useState(0);
-  const [studentid, setStudentId] = useState("");
+  // const [studentid, setStudentId] = useState("");
   const [name, setName] = useState("");
   const [branch, setBranch] = useState("");
   const [year, setYear] = useState("");
@@ -15,7 +15,7 @@ const Update = () => {
     e.preventDefault();
     axios
       .put(`https://65c9e6173b05d29307df36a0.mockapi.io/crud-sahil/${id}`, {
-        studentid: studentid,
+        // studentid: studentid,
         name: name,
         branch: branch,
         year: year,
@@ -27,7 +27,7 @@ const Update = () => {
 
   useEffect(() => {
     setId(localStorage.getItem("id"));
-    setStudentId(localStorage.getItem("studentid"));
+    // setStudentId(localStorage.getItem("studentid"));
     setName(localStorage.getItem("name"));
     setBranch(localStorage.getItem("branch"));
     setYear(localStorage.getItem("year"));
@@ -41,10 +41,10 @@ const Update = () => {
             <div className="input-container">
               <input
                 placeholder="student id"
-                value={studentid}
-                onChange={(e) => {
-                  setStudentId(e.target.value);
-                }}
+                // value={studentid}
+                // onChange={(e) => {
+                //   setStudentId(e.target.value);
+                // }}
                 type="studentid"
               />
             </div>

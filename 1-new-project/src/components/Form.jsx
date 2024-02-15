@@ -1,13 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 const Form = () => {
   const [studentid, setStudentId] = useState("");
   const [name, setName] = useState("");
   const [branch, setBranch] = useState("");
   const [year, setYear] = useState("");
-  const history = useNavigate();
+  // const [error, setError] = useState({});
+  const navigate = useNavigate();
 
   const header = { "Acces-controll-origin": "*" };
 
@@ -21,30 +21,27 @@ const Form = () => {
         year: year,
         header,
       })
-      .then(() => {
-        history("/table");
-      });
-    // event.preventDefault();
-    // // console.log(studentid)
-    // let states =JSON.parse(localStorage.getItem("name")||"[]");
-    // let state = {
-    //   StudentId: studentid,
-    //   Name: name,
-    //   Branch: branch,
-    //   Year: year
-    // };
-    // // console.log(state);
-    // states.push(state);
-    // localStorage.setItem("name", JSON.stringify(states));
+      .then(() => {});
+    if (studentid.length == "") {
+      // validate.studentid = "student id ";
+      alert("id is requried");
+    } else if (name.length <= 2) {
+      alert("name is required");
+    } else if (branch.length < 2) {
+      // validate.branch = "Branch is ";
+      alert("branch Name is required");
+    }
 
-    // const temp = ;
-    // console.log(temp)
+    // setError(validate);
+    else {
+      navigate("/table");
+    }
   }
   return (
     <>
       <div className="big-body">
         <div className="container">
-          <form onSubmit={handleSubmit} id="form signup ">
+          <form onSubmit={handleSubmit} id="form signup">
             <h2>Sign In</h2>
             <div className="input-container">
               {/* <label htmlFor="studentid">Student Id</label> */}
@@ -53,6 +50,8 @@ const Form = () => {
                 value={studentid}
                 onChange={(e) => {
                   setStudentId(e.target.value);
+                  // handleInputChange(e)
+                  // validate(e);
                 }}
                 type="studentid"
               />
@@ -84,7 +83,7 @@ const Form = () => {
               <input
                 placeholder="year"
                 value={year}
-                type="year"
+                type="number"
                 onChange={(e) => {
                   setYear(e.target.value);
                 }}
@@ -94,9 +93,8 @@ const Form = () => {
           </form>
         </div>
       </div>
-      <Link to="/table">
-        <button className="seedata">See Data</button>
-      </Link>
+
+      <button className="seedata">See Data</button>
     </>
   );
 };

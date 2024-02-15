@@ -9,13 +9,13 @@ const Table = () => {
     axios
       .get("https://65c9e6173b05d29307df36a0.mockapi.io/crud-sahil")
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setData(res.data);
       });
   }
 
   const setToLocalStorage = (id, studentid, name, branch, year) => {
-    localStorage.setItem("id", id);
+    // localStorage.setItem("id", id);
     localStorage.setItem("studntid", studentid);
     localStorage.setItem("name", name);
     localStorage.setItem("branch", branch);

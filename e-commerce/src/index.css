@@ -1,0 +1,31 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.Header{
+  display: flex;
+  justify-content:space-between ;
+  align-items: center;
+  background-color: antiquewhite;
+  height: 3rem;
+}
+.login-btn{
+  background:white;
+  font-weight:bold ;
+  /* padding-right: 5rem; */
+  width: 4rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.login-btn:hover{
+  background: rgba(205, 193, 21, 0.355);
+  border: none;
+  
+}
+.btn-holder{
+  padding-right: 3rem;
+}
+.home-btn{
+  text-decoration: none;
+}

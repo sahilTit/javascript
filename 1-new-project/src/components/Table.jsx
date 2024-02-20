@@ -22,6 +22,10 @@ const Table = () => {
     localStorage.setItem("year", year);
   };
 
+  // function setToTable = (id,studentid,name,branch,year)=>{
+  //   axios.
+  // }
+
   function handleDelete(id) {
     axios
       .delete(`https://65c9e6173b05d29307df36a0.mockapi.io/crud-sahil/${id}`)

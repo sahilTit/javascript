@@ -1,0 +1,36 @@
+.main {
+  background-color: #efefd4;
+  /* color: red; */
+  width: 40vh;
+  /* height: 50vh; */
+  margin-top: 2rem;
+  border-radius: 1rem;
+}
+
+.img-1 {
+  height: 35vh;
+  /* left: 5px; */
+  padding: 2px;
+}
+.btn-d {
+  width: 7rem;
+  height: 2rem;
+  border: none;
+  color: whitesmoke;
+  background: #000;
+  border-radius: 10px;
+  padding: 5px;
+}
+.main-1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+.price-tag{
+  font-weight: bold;
+}
+.ppd{
+  padding: 10px;
+}

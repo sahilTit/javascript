@@ -1,0 +1,49 @@
+.form1 {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(83, 190, 194, 0.495);
+  height: 70vh;
+}
+.whole-form {
+  width: 30vh;
+  height: 75%;
+  background-color: rgba(90, 150, 130, 0.449);
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  /* position: absolute; */
+  border-radius: 20px;
+  /* padding: 5rem; */
+}
+.secondary-form {
+  display: flex;
+  height: 50px;
+}
+.lvsi {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+.inputa {
+  height: 1.6rem;
+  border: none;
+  border-radius: 15px;
+}
+.divbtn {
+  padding: 20px 0 0 0px;
+}
+.btn {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 10px;
+  border: none;
+  background-color: bisque;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgba(153, 139, 121, 0.414);
+}

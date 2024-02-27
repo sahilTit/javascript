@@ -1,48 +1,29 @@
-import "./Loginpage.css"
-const handleSubmit = (e) => {
-  e.preventDefault();
-
-};
+import "./Loginpage.css";
+// const handleSubmit = (e) => {
+//   e.preventDefault();
+// };
 
 function LoginPage() {
   return (
     <div className="form1">
       <div className="whole-form">
-        <div>
-          <h2>Login Form</h2>
-        </div>
+        <h1>Signup Form</h1>
         <div className="secondary-form">
-          <form onSubmit={handleSubmit} action="submit">
-            <div className="lvsi">
-              <label className="labela" htmlFor="email">
-                Full Name
-              </label>
-              <input className="inputa" placeholder="Full Name" type="text" />
-            </div>
-            <div className="lvsi">
-              <label className="labela" htmlFor="Password">
-                Email
-              </label>
-              <input
-                className="inputa"
-                placeholder="Email"
-                type="password"
-              />
-            </div>{" "}
-            <div className="lvsi">
-              <label className="labela" htmlFor="Password">
-                Password
-              </label>
-              <input
-                className="inputa"
-                placeholder="password"
-                type="password"
-              />
-            </div>
-            <div className="divbtn">
-              <button className="btn">Submit</button>
-            </div>
-          </form>
+          <input placeholder="Full Name" type="text" />
+          <input placeholder="Email" type="password" />
+          <input placeholder="password" type="password" />
+        </div>
+        <div className="divbtn">
+          <button className="btn">Continue</button>
+        </div>
+        <div className="loginsignup-login">
+          <p>
+            Already have an account ?<span>Login here</span>
+          </p>
+        </div>
+        <div className="loginsignup-agree">
+          <input type="checkbox" name="" id="" />
+          <p>By Agree terms of privacy policy</p>
         </div>
       </div>
     </div>

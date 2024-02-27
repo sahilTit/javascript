@@ -1,49 +1,61 @@
 .form1 {
-  display: flex;
-  justify-content: center;
-  background-color: rgba(83, 190, 194, 0.495);
-  height: 70vh;
+  width: 86.85%;
+  height: 80vh;
+  background: #fce3fe;
+  padding: 100px;
 }
 .whole-form {
-  width: 30vh;
-  height: 75%;
-  background-color: rgba(90, 150, 130, 0.449);
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  flex-direction: column;
-  gap: 3rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  /* position: absolute; */
-  border-radius: 20px;
-  /* padding: 5rem; */
+  width: 580px;
+  height: 600px;
+  background: white;
+  margin: auto;
+  padding: 40px 60px;
+}
+.whole-form h1 {
+  margin: 20px 0px;
 }
 .secondary-form {
   display: flex;
-  height: 50px;
-}
-.lvsi {
-  display: flex;
   flex-direction: column;
-  font-size: 1.5rem;
+  gap: 29px;
+  margin-top: 30px;
 }
-.inputa {
-  height: 1.6rem;
-  border: none;
-  border-radius: 15px;
+.secondary-form input {
+  height: 72px;
+  width: 100%;
+  padding-left: 20px;
+  border: 1px solid #c9c9c9;
+  outline: none;
+  color: #5c5c5c;
+  font-size: 18px;
 }
-.divbtn {
-  padding: 20px 0 0 0px;
-}
-.btn {
-  width: 5rem;
-  height: 2rem;
-  border-radius: 10px;
-  border: none;
-  background-color: bisque;
+.divbtn button {
+  width: 580px;
+  height: 72px;
+  color: white;
+  background: #ff4141;
+  margin-top: 30px;
   cursor: pointer;
+  font-size: 24px;
+  font-weight: 500;
+  border: none;
 }
-.btn:hover {
-  background-color: rgba(153, 139, 121, 0.414);
+.loginsignup-login {
+  margin-top: 20px;
+  color: #5c5c5c;
+  font-size: 18px;
+  font-weight: 500;
+}
+.loginsignup-login span {
+  color: #ff4141;
+  font-weight: 500;
+}
+.loginsignup-agree {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  gap: 20px;
+  color: #5c5c5c;
+  font-size: 18px;
+  font-weight: 500;
 }

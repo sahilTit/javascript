@@ -1,0 +1,30 @@
+.product-img img {
+  height: 15rem;
+  width: 15rem;
+}
+.price {
+  text-align: center;
+}
+.product-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add {
+  cursor: pointer;
+}
+.product-item {
+  cursor: pointer;
+}
+/* .product-img img:hover {
+  height: 13rem;
+  width: 13rem;
+  transition: 0.1s;
+} */
+.Product-name a{
+  color: black;
+  text-decoration: none;
+}
+.Product-name:hover a{
+  color: rgb(127, 223, 255);
+}

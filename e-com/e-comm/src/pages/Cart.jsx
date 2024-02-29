@@ -1,8 +1,13 @@
-import Helmete from "../components/helmete/Helmete"
+// import Helmete from "../components/helmete/Helmete"
 
 function Cart() {
   return (
-    <Helmete title={"Cart"}></Helmete>
+    // <Helmete title={"Cart"}>
+    //   hoijawiojfol
+    // </Helmete>
+    <div>
+      hello
+    </div>
   )
 }
 

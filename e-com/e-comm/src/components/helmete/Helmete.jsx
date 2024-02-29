@@ -1,6 +1,6 @@
 function Helmete(props) {
   document.title = "TechSofa-" + props.title;
-  return <div>{props.title}</div>;
+  return <div >{props.children}</div>;
 }
 
 export default Helmete;

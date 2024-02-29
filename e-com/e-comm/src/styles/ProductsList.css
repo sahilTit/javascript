@@ -1,0 +1,6 @@
+.product-li{
+    display: flex;
+    /* background: rebeccapurple; */
+    flex-wrap: wrap;
+    gap: 3rem;
+}

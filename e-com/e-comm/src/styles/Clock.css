@@ -1,0 +1,15 @@
+.div1 {
+  height: 1rem;
+  display: flex;
+  margin-top: 2rem;
+  /* gap: 1rem; */
+}
+.clock-data {
+  display: flex;
+  /* justify-content: center; */
+  gap: 1rem;
+  align-items: center;
+}
+.clock-time {
+  font-size: xx-large;
+}

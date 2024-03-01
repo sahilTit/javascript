@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import Services from "../services/Services";
 import ProductsList from "../components/Ui/ProductsList";
 import products from "./../assets/data/products";
-
+import counterImg from "./../assets/images/counter-timer-img.png";
+import Clock from "../components/Ui/Clock";
 // import {myData} from '../assets/data/data.json'
 function Home() {
   const [trendingProducts, setTrendingProducts] = useState([]);
@@ -17,7 +18,7 @@ function Home() {
       (item) => item.category === "chair"
     );
     const FilteredFamousProducts = products.filter(
-      (item) => item.category === "mobile"
+      (item) => item.category === "sofa"
     );
     setFamousProducts(FilteredFamousProducts);
     setTrendingProducts(FilteredTrendingProducts);
@@ -61,6 +62,21 @@ function Home() {
           </div>
           <div className="products-list">
             <ProductsList data={famousProducts} />
+          </div>
+        </section>
+        <section className="timer-count">
+          <div className="time-counter">
+            <div>
+              <h4 className="offer">Offer for Limited Time period</h4>
+              <h3 className="qual">Quality Product </h3>
+              <Clock />
+              <Link to="/shop">
+                <button className="str-btn">Visti Store</button>
+              </Link>
+            </div>
+            <div>
+              <img src={counterImg} alt="" />
+            </div>
           </div>
         </section>
       </Helmete>

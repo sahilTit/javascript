@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const Form = () => {
   const [employeid, setEmployeId] = useState("");
@@ -30,6 +30,7 @@ const Form = () => {
       setError(true);
     }
     // .catch(()=>{})
+    
     if (employeid.length == "") {
       // validate.studentid = "student id ";
       alert("id is requried");
@@ -39,14 +40,15 @@ const Form = () => {
       // validate.branch = "Branch is ";
       alert("branch Name is required");
     }
-    else if(AxiosError){
+    // setError(validate);
+    else if(error){
       navigate("/error")
     }
-    // setError(validate);
     else {
       navigate("/table");
     }
   }
+ 
   return (
     <>
       <div className="big-body">

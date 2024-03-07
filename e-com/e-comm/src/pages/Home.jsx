@@ -12,6 +12,8 @@ import Clock from "../components/Ui/Clock";
 function Home() {
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [famousProducts, setFamousProducts] = useState([]);
+  const [mobileProducts, setMobileProducts] = useState([]);
+  const [wirelessProducts, setWirelessProducts] = useState([]);
   const year = new Date().getFullYear();
   useEffect(() => {
     const FilteredTrendingProducts = products.filter(
@@ -20,8 +22,16 @@ function Home() {
     const FilteredFamousProducts = products.filter(
       (item) => item.category === "sofa"
     );
+    const FilterdMobileProducts = products.filter(
+      (item) => item.category === "mobile"
+    );
+    const FilteredWirelessProducts = products.filter(
+      (item) => item.category === `watch`
+    );
     setFamousProducts(FilteredFamousProducts);
     setTrendingProducts(FilteredTrendingProducts);
+    setMobileProducts(FilterdMobileProducts);
+    setWirelessProducts(FilteredWirelessProducts);
   }, []);
 
   // console.log(myData)
@@ -50,7 +60,7 @@ function Home() {
         <Services />
         <section className="home-trend">
           <div className="inner">
-            <h2>All Product</h2>
+            <h2>All Chairs</h2>
           </div>
           <div className="products-list">
             <ProductsList data={trendingProducts} />
@@ -58,7 +68,7 @@ function Home() {
         </section>
         <section className="home-trend">
           <div className="inner">
-            <h2>Famous Product</h2>
+            <h2>Famous Sofas</h2>
           </div>
           <div className="products-list">
             <ProductsList data={famousProducts} />
@@ -77,6 +87,22 @@ function Home() {
             <div>
               <img src={counterImg} alt="" />
             </div>
+          </div>
+        </section>
+        <section className="home-trend">
+          <div className="inner">
+            <h2>Sale Mobiles</h2>
+          </div>
+          <div className="products-list">
+            <ProductsList data={mobileProducts} />
+          </div>
+        </section>
+        <section className="home-trend">
+          <div className="inner">
+            <h2>Sale Wireless</h2>
+          </div>
+          <div className="products-list">
+            <ProductsList data={wirelessProducts} />
           </div>
         </section>
       </Helmete>

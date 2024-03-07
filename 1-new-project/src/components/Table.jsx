@@ -7,19 +7,19 @@ const Table = () => {
 
   function getData() {
     axios
-      .get("https://65c9e6173b05d29307df36a0.mockapi.io/crud-sahil")
+      .get("https://65e993bdc9bf92ae3d3989a4.mockapi.io/sahil-21/curd-sahil")
       .then((res) => {
         // console.log(res.data);
         setData(res.data);
       });
   }
 
-  const setToLocalStorage = (id, studentid, name, branch, year) => {
+  const setToLocalStorage = (id, employeid, name, email, salary) => {
     // localStorage.setItem("id", id);
-    localStorage.setItem("studntid", studentid);
+    localStorage.setItem("studntid", employeid);
     localStorage.setItem("name", name);
-    localStorage.setItem("branch", branch);
-    localStorage.setItem("year", year);
+    localStorage.setItem("branch", email);
+    localStorage.setItem("year", salary);
   };
 
   // function setToTable = (id,studentid,name,branch,year)=>{
@@ -28,7 +28,9 @@ const Table = () => {
 
   function handleDelete(id) {
     axios
-      .delete(`https://65c9e6173b05d29307df36a0.mockapi.io/crud-sahil/${id}`)
+      .delete(
+        `https://65e993bdc9bf92ae3d3989a4.mockapi.io/sahil-21/curd-sahil/${id}`
+      )
       .then(() => {
         getData();
       });
@@ -44,10 +46,10 @@ const Table = () => {
         <thead>
           <tr>
             <td>#</td>
-            <td>Student Id</td>
+            <td>Employee Id</td>
             <td>Name</td>
-            <td>Branch</td>
-            <td>Year</td>
+            <td>email</td>
+            <td>salary</td>
             <td>{/* <button className="edit-button">edit</button> */}</td>
             <td>{/* <button className="delete-button">delete</button> */}</td>
           </tr>
@@ -58,10 +60,10 @@ const Table = () => {
               <tbody className="tablebody">
                 <tr>
                   <td>{eachData.id}</td>
-                  <td>{eachData.studentid}</td>
+                  <td>{eachData.employeid}</td>
                   <td>{eachData.name}</td>
-                  <td>{eachData.branch}</td>
-                  <td>{eachData.year}</td>
+                  <td>{eachData.email}</td>
+                  <td>{eachData.salary}</td>
                   <td>
                     <Link to="/update">
                       <button
@@ -69,10 +71,10 @@ const Table = () => {
                         onClick={() =>
                           setToLocalStorage(
                             eachData.id,
-                            eachData.studentid,
+                            eachData.employeid,
                             eachData.name,
-                            eachData.branch,
-                            eachData.year
+                            eachData.email,
+                            eachData.salary
                           )
                         }
                       >

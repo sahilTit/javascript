@@ -1,37 +1,47 @@
 import { useState } from "react";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 const Form = () => {
-  const [studentid, setStudentId] = useState("");
+  const [employeid, setEmployeId] = useState("");
   const [name, setName] = useState("");
-  const [branch, setBranch] = useState("");
-  const [year, setYear] = useState("");
-  // const [error, setError] = useState({});
+  const [email, setEmail] = useState("");
+  const [salary, setSalary] = useState("");
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   const header = { "Acces-controll-origin": "*" };
 
   function handleSubmit(event) {
     event.preventDefault();
-    axios
-      .post("https://65c9e6173b05d29307df36a0.mockapi.io/crud-sahil", {
-        studentid: studentid,
-        name: name,
-        branch: branch,
-        year: year,
-        header,
-      })
-      .then(() => {});
-    if (studentid.length == "") {
+
+    try {
+      setError(true);
+      axios.post(
+        "https://65e993bdc9bf92ae3d3989a4.mockapi.io/sahil-21/curd-sahil",
+        {
+          employeid: employeid, // employe id
+          name: name, // name
+          email: email, // email
+          salary: salary, // salary
+          header,
+        }
+      );
+    } catch (error) {
+      setError(true);
+    }
+    // .catch(()=>{})
+    if (employeid.length == "") {
       // validate.studentid = "student id ";
       alert("id is requried");
     } else if (name.length <= 2) {
       alert("name is required");
-    } else if (branch.length < 2) {
+    } else if (email.length < 2) {
       // validate.branch = "Branch is ";
       alert("branch Name is required");
     }
-
+    else if(AxiosError){
+      navigate("/error")
+    }
     // setError(validate);
     else {
       navigate("/table");
@@ -47,9 +57,9 @@ const Form = () => {
               {/* <label htmlFor="studentid">Student Id</label> */}
               <input
                 placeholder="student id"
-                value={studentid}
+                value={employeid}
                 onChange={(e) => {
-                  setStudentId(e.target.value);
+                  setEmployeId(e.target.value);
                   // handleInputChange(e)
                   // validate(e);
                 }}
@@ -70,11 +80,11 @@ const Form = () => {
             <div className="input-container">
               {/* <label htmlFor="branch">Branch</label> */}
               <input
-                value={branch}
+                value={email}
                 type="branch"
                 placeholder="Branch"
                 onChange={(e) => {
-                  setBranch(e.target.value);
+                  setEmail(e.target.value);
                 }}
               />
             </div>
@@ -82,10 +92,10 @@ const Form = () => {
               {/* <label htmlFor="year">Year</label> */}
               <input
                 placeholder="year"
-                value={year}
+                value={salary}
                 type="number"
                 onChange={(e) => {
-                  setYear(e.target.value);
+                  setSalary(e.target.value);
                 }}
               />
             </div>

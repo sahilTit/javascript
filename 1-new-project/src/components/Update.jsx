@@ -6,19 +6,19 @@ const Update = () => {
   const [id, setId] = useState(0);
   // const [studentid, setStudentId] = useState("");
   const [name, setName] = useState("");
-  const [branch, setBranch] = useState("");
-  const [year, setYear] = useState("");
+  const [email, setEmail] = useState("");
+  const [salary, setSalary] = useState("");
 
   const navigate = useNavigate();
 
   const handleUpdate = (e) => {
     e.preventDefault();
     axios
-      .put(`https://65c9e6173b05d29307df36a0.mockapi.io/crud-sahil/${id}`, {
+      .put( `https://65e993bdc9bf92ae3d3989a4.mockapi.io/sahil-21/curd-sahil/${id}`, {
         // studentid: studentid,
         name: name,
-        branch: branch,
-        year: year,
+        email: email,
+        salary: salary,
       })
       .then(() => {
         navigate("/table");
@@ -29,8 +29,8 @@ const Update = () => {
     setId(localStorage.getItem("id"));
     // setStudentId(localStorage.getItem("studentid"));
     setName(localStorage.getItem("name"));
-    setBranch(localStorage.getItem("branch"));
-    setYear(localStorage.getItem("year"));
+    setEmail(localStorage.getItem("email"));
+    setSalary(localStorage.getItem("salary"));
   }, []);
   return (
     <>
@@ -60,21 +60,21 @@ const Update = () => {
             </div>
             <div className="input-container">
               <input
-                value={branch}
-                type="branch"
+                value={email}
+                type="email"
                 placeholder="Branch"
                 onChange={(e) => {
-                  setBranch(e.target.value);
+                  setEmail(e.target.value);
                 }}
               />
             </div>
             <div className="input-container">
               <input
-                placeholder="year"
-                value={year}
+                placeholder="salary"
+                value={salary}
                 type="year"
                 onChange={(e) => {
-                  setYear(e.target.value);
+                  setSalary(e.target.value);
                 }}
               />
             </div>

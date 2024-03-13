@@ -34,13 +34,19 @@
   background: rgb(12, 12, 75);
   color: #fff;
 }
-.selectors select:focus{
+.selectors select:focus {
   outline: none !important;
 }
-.serachbar input{
+.serachbar input {
   width: 25rem;
   border: none;
   padding: 8px 10px;
   outline: none;
   cursor: pointer;
+}
+.products-filter {
+  padding: 0 3rem;
+}
+.not-found {
+  text-align: center;
 }

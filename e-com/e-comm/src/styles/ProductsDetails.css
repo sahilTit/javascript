@@ -1,0 +1,15 @@
+.prodetail-image {
+  width: 40rem;
+}
+.prodetail-sec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adtcrt {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background: rgb(12, 12, 75);
+  color: white;
+}

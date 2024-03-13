@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Form />} />
         <Route path="/table" element={<Table />} />
         <Route path="/update" element={<Update />} />
-        <Route path="/error" element={<ErrorPage/>}/>
+        <Route  element={<ErrorPage/>}/>
       </Routes>
       {/* <Form></Form> */}
     </BrowserRouter>

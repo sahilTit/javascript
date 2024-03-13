@@ -7,7 +7,7 @@ const Table = () => {
 
   function getData() {
     axios
-      .get("https://65e993bdc9bf92ae3d3989a4.mockapi.io/sahil-21/curd-sahil")
+      .get("https://65e993bdc9bf92ae3d3989a4.mockapi.io/sahil-21/curd-")
       .then((res) => {
         // console.log(res.data);
         setData(res.data);

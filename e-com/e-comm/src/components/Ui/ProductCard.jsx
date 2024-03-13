@@ -2,8 +2,25 @@ import "../../styles/ProductCard.css";
 import PropTypes from "prop-types";
 import { IoAddOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../redux/slices/cartSlice";
+import { toast } from "react-toastify";
+
 function ProductCard({ item }) {
   // console.log("sam", data);
+  const distpatch = useDispatch();
+  const addToCart = () => {
+    distpatch(
+      cartActions.addItem({
+        id: item.id,
+        productName: item.productName,
+        price: item.price,
+        image: item.imgUrl,
+      })
+    );
+    // alert("Product Added To Cart");
+    toast.success("product Added SuccesFully");
+  };
   return (
     <div className="product-item">
       <div className="product-img">
@@ -15,7 +32,7 @@ function ProductCard({ item }) {
       <span className={item.chair}>{item.category}</span>
       <div className="product-card-bottom">
         <span className="price">{item.price}</span>
-        <span className="add">
+        <span className="add" onClick={addToCart}>
           <IoAddOutline />
         </span>
       </div>

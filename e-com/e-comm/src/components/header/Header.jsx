@@ -51,9 +51,9 @@ function Header() {
             </span>
             {/* <span className="badge">1</span> */}
             <span className="menu-icon">
-            <CiHeart />
+              <CiHeart />
             </span>
-            
+
             <span className="usericon">
               <img src={userIcon} alt="" />
             </span>

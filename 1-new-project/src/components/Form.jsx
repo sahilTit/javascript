@@ -17,38 +17,31 @@ const Form = () => {
     try {
       setError(true);
       axios.post(
-        "https://65e993bdc9bf92ae3d3989a4.mockapi.io/sahil-21/curd-sahil",
+        "https://65e993bdc9bf92ae3d3989a4.mockapi.io/sahil-21/curd-",
         {
           employeid: employeid, // employe id
           name: name, // name
           email: email, // email
           salary: salary, // salary
-          header,
+          header,  
         }
       );
     } catch (error) {
       setError(true);
+      navigate("/error");
     }
     // .catch(()=>{})
-    
-    if (employeid.length == "") {
-      // validate.studentid = "student id ";
-      alert("id is requried");
-    } else if (name.length <= 2) {
-      alert("name is required");
-    } else if (email.length < 2) {
-      // validate.branch = "Branch is ";
-      alert("branch Name is required");
-    }
-    // setError(validate);
-    else if(error){
-      navigate("/error")
-    }
-    else {
+    if (error) {
+      return <h1>404 Error</h1>;
+    } else {
       navigate("/table");
     }
+
+    // else {
+    //   navigate("/table");
+    // }
   }
- 
+
   return (
     <>
       <div className="big-body">

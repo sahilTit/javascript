@@ -14,12 +14,15 @@ const Update = () => {
   const handleUpdate = (e) => {
     e.preventDefault();
     axios
-      .put( `https://65e993bdc9bf92ae3d3989a4.mockapi.io/sahil-21/curd-sahil/${id}`, {
-        // studentid: studentid,
-        name: name,
-        email: email,
-        salary: salary,
-      })
+      .put(
+        `https://65e993bdc9bf92ae3d3989a4.mockapi.io/sahil-21/curd-sahil/${id}`,
+        {
+          // studentid: studentid,
+          name: name,
+          email: email,
+          salary: salary,
+        }
+      )
       .then(() => {
         navigate("/table");
       });

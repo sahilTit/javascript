@@ -19,23 +19,27 @@ function ProductDetails() {
     avgRating,
   } = product;
   return (
-    <Helmet>
-      {/* <CommonSection></CommonSection> */}
+    <Helmet title={productName}>
+      <CommonSection title={productName}/>
       <section className="prodetail-sec">
         <div>
           <img src={imgUrl} alt="" className="prodetail-image" />
         </div>
         <div>
           <h1>{productName}</h1>
-          <span>
-            <IoStar />
-            <IoStar />
-            <IoStar />
-            <IoStar />
-            <IoMdStarHalf />
-          </span>
-          <p>{avgRating}(avgRating)</p>
-          <p>{price}</p>
+          <div className="pd-iostar">
+            <span>
+              <IoStar />
+              <IoStar />
+              <IoStar />
+              <IoStar />
+              <IoMdStarHalf />
+            </span>
+            <p>
+              (<span className="colr-cng">{avgRating}</span> Rating)
+            </p>
+          </div>
+          <p>{price}$</p>
           <p>{shortDesc}</p>
           <button className="adtcrt">AddToCart</button>
         </div>

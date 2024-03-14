@@ -28,3 +28,10 @@
 .Product-name:hover a{
   color: rgb(127, 223, 255);
 }
+.pd-iostar{
+  display: flex;
+  gap: 1rem;
+}
+.colr-cng{
+  color: coral;
+}

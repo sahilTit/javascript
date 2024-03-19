@@ -1,4 +1,4 @@
-import { UserButton } from "@clerk/clerk-react";
+// import { UserButton } from "@clerk/clerk-react";
 
 function ProtectedPage() {
   return <UserButton />;

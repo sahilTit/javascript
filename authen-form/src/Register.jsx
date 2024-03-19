@@ -5,7 +5,7 @@ import axios from ".//api/Axios";
 
 const USER_REGEX = /^[a-zA-z][a-zA-Z0-9-_]{3,32}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URl = "/sahil-21/curd-sahil";
+const REGISTER_URl = "/login-info";
 
 const Register = () => {
   const userRef = useRef();
@@ -65,7 +65,7 @@ const Register = () => {
         JSON.stringify({ user, pwd }),
         {
           headers: { "content-type": "application/json" },
-          withCredentials: true,
+          // withCredentials: true,
         }
       );
       console.log(response.data);
@@ -120,6 +120,7 @@ const Register = () => {
                 aria-invalid={validName ? "false" : "true"}
                 aria-describedby="uidnote"
                 ref={userRef}
+                value={user}
               />
               <p
                 id="uidnote"
@@ -152,6 +153,7 @@ const Register = () => {
                 aria-describedby="pwdnote"
                 onFocus={() => setPwdFocus(true)}
                 onBlur={() => setPwdFocus(false)}
+                // value={pwd}
               />
               <p
                 id="pwdnote"
@@ -201,6 +203,13 @@ const Register = () => {
               >
                 Sign Up
               </button>
+              <p>
+                Already a Sign-in?
+                <br />
+                {
+                  <span className="line">Log-in</span> //Router link
+                }
+              </p>
             </form>
           </section>
         </div>

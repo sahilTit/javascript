@@ -20,7 +20,7 @@ function ProductDetails() {
   } = product;
   return (
     <Helmet title={productName}>
-      <CommonSection title={productName}/>
+      <CommonSection title={productName} />
       <section className="prodetail-sec">
         <div>
           <img src={imgUrl} alt="" className="prodetail-image" />
@@ -28,7 +28,7 @@ function ProductDetails() {
         <div>
           <h1>{productName}</h1>
           <div className="pd-iostar">
-            <span>
+            <span className="iostar">
               <IoStar />
               <IoStar />
               <IoStar />
@@ -44,6 +44,13 @@ function ProductDetails() {
           <button className="adtcrt">AddToCart</button>
         </div>
       </section>
+      <div className="descrp">
+        <h4>Descripton</h4>
+        <p>Reviews({reviews.length}) </p>
+      </div>
+      <div className="descrp">
+        <h6>{description}</h6>
+      </div>
     </Helmet>
   );
 }

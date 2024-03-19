@@ -4,6 +4,8 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import "./Header.css";
 import userIcon from "../../assets/images/user-icon.png";
 import { CiHeart } from "react-icons/ci";
+import { useAuth0 } from "@auth0/auth0-react";
+
 const nav__links = [
   {
     path: "home",
@@ -20,6 +22,8 @@ const nav__links = [
 ];
 
 function Header() {
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
+
   return (
     <>
       <div className="header-main">
@@ -55,7 +59,19 @@ function Header() {
             </span>
 
             <span className="usericon">
-              <img src={userIcon} alt="" />
+              {isAuthenticated ? (
+                <button
+                  onClick={() =>
+                    logout({
+                      returnTo: window.location.origin,
+                    })
+                  }
+                >
+                  Log Out
+                </button>
+              ) : (
+                <button onClick={() => loginWithRedirect()}>Log In</button>
+              )}
             </span>
           </div>
         </div>

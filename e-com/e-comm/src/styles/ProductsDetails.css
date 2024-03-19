@@ -14,3 +14,12 @@
   color: white;
   cursor: pointer;
 }
+.iostar {
+  color: yellow;
+}
+.descrp{
+  margin-top: 2rem;
+  padding:0 5rem;
+  display: flex;
+  gap: 2rem;
+}

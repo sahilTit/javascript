@@ -4,8 +4,11 @@ import CommonSection from "../components/Ui/CommonSection";
 import products from "../assets/data/products";
 import { IoStar } from "react-icons/io5";
 import { IoMdStarHalf } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../redux/slices/cartSlice";
 
 import "../styles/ProductsDetails.css";
+import { toast } from "react-toastify";
 function ProductDetails() {
   const { id } = useParams();
   const product = products.find((item) => item.id === id);
@@ -17,7 +20,20 @@ function ProductDetails() {
     reviews,
     shortDesc,
     avgRating,
+    category,
   } = product;
+  const dispatch = useDispatch();
+  const addToCart = () => {
+    dispatch(
+      cartActions.addItem({
+        id,
+        productName,
+        price,
+        image: imgUrl,
+      })
+    );
+    toast.success("Product added successfully");
+  };
   return (
     <Helmet title={productName}>
       <CommonSection title={productName} />
@@ -39,9 +55,14 @@ function ProductDetails() {
               (<span className="colr-cng">{avgRating}</span> Rating)
             </p>
           </div>
-          <p>{price}$</p>
+          <div className="pr-cat">
+            <p>{price}$</p>
+            <span>Catergory:{category}</span>
+          </div>
           <p>{shortDesc}</p>
-          <button className="adtcrt">AddToCart</button>
+          <button className="adtcrt" onClick={addToCart}>
+            AddToCart
+          </button>
         </div>
       </section>
       <div className="descrp">

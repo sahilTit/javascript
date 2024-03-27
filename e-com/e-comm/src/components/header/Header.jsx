@@ -1,8 +1,7 @@
 import logo from "../../assets/images/eco-logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import "./Header.css";
-import userIcon from "../../assets/images/user-icon.png";
 import { CiHeart } from "react-icons/ci";
 
 const nav__links = [
@@ -21,7 +20,10 @@ const nav__links = [
 ];
 
 function Header() {
-
+  const navigate = useNavigate();
+  const navigateToCart = () => {
+    navigate("/cart");
+  };
   return (
     <>
       <div className="header-main">
@@ -49,16 +51,14 @@ function Header() {
         <div className="header-three">
           <div className="nav-icon">
             <span className="cart-icon">
-              <MdOutlineShoppingCart />
+              <MdOutlineShoppingCart onClick={navigateToCart} />
             </span>
             {/* <span className="badge">1</span> */}
             <span className="menu-icon">
               <CiHeart />
             </span>
 
-            <span className="usericon">
-             
-            </span>
+            <span className="usericon"></span>
           </div>
         </div>
       </div>

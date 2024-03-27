@@ -15,11 +15,12 @@ function ProductCard({ item }) {
         id: item.id,
         productName: item.productName,
         price: item.price,
-        image: item.imgUrl,
+        imgUrl: item.imgUrl,
       })
     );
     // alert("Product Added To Cart");
     toast.success("product Added SuccesFully");
+    // console.log()
   };
   return (
     <div className="product-item">

@@ -1,0 +1,20 @@
+.home-btn {
+  background: linear-gradient(#e6bf64, #9198e5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.big-font{
+    font-size: 3rem;
+}
+.left-side-btn{
+    height: 2.5rem;
+    background-color: #e6bf64;
+    border: white;
+    border-radius: 2rem;
+    width: 10rem;
+    cursor: pointer;
+}
+ img{
+    height: 90vh;
+}

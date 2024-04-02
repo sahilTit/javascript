@@ -27,7 +27,10 @@ const Login = () => {
     try {
       const response = await axios.post(
         LOGIN_URL,
-        JSON.stringify({ user, pwd }),
+        JSON.stringify({
+          user, //userName: user
+          pwd, //password :pwd
+        }),
         {
           headers: { "Content-Type": "applicatton/json" },
           // withCredentials: true,
@@ -50,6 +53,7 @@ const Login = () => {
       } else {
         errMsg("LoginFailure");
       }
+      errRef.current.focus();
     }
   };
 
@@ -62,7 +66,7 @@ const Login = () => {
             <a href="#">Sign-in</a>
           </p>
         </section>
-      )  : (
+      ) : (
         <div className="main-con">
           <section className="sec-fot">
             <p

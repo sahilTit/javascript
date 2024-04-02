@@ -4,30 +4,30 @@ import { useState, useEffect } from "react";
 import Items from "../Items/Items";
 
 function Home() {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
-  function getData() {
-    axios
-      .get("https://fakestoreapi.com/products")
-      .then((res) => {
-        console.log(res.data);
-      })
-      .then((res) => {
-        setData(res.data);
-      });
-  }
-  const allData = (id, title, price, description, category, image, rating) => {
-    setData("id", id);
-    setData("title", title);
-    setData("price", price);
-    setData("description", description);
-    setData("category", category);
-    setData("image", image);
-    setData("rating", rating);
-  };
-  useEffect(() => {
-    getData();
-  }, []);
+  // function getData() {
+  //   axios
+  //     .get("https://fakestoreapi.com/products")
+  //     // .then((res) => {
+  //     //   // console.log(res.data);
+  //     // })
+  //     .then((res) => {
+  //       setData(res.data);
+  //     });
+  // }
+  // const allData = (id, title, price, description, category, image, rating) => {
+  //   setData("id", id);
+  //   setData("title", title);
+  //   setData("price", price);
+  //   setData("description", description);
+  //   setData("category", category);
+  //   setData("image", image);
+  //   setData("rating", rating);
+  // };
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <>
@@ -47,7 +47,7 @@ function Home() {
           />
         </div>
       </div>
-      <Items data={data} />
+      <Items />
       {/* <Popular /> */}
     </>
   );

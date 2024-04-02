@@ -6,8 +6,8 @@ function ProductsList({ data }) {
   // console.log(data);
   return (
     <div className="product-li">
-      {data?.map((item, index) => (
-        <ProductCard item={item} key={index} />
+      {data?.map((item, id) => (
+        <ProductCard data={data} key={id} />
       ))}
     </div>
   );

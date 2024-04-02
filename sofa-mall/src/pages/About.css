@@ -1,0 +1,14 @@
+.container{
+    height: 40vh;
+    width: 20%;
+
+}
+.main-container{
+    display: flex;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    /* width: 40vh; */
+}

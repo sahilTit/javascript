@@ -20,7 +20,7 @@ function ProductCard({ item }) {
     );
     // alert("Product Added To Cart");
     toast.success("product Added SuccesFully");
-    // console.log()
+    // console.log(addToCartSuccess)
   };
   return (
     <div className="product-item">

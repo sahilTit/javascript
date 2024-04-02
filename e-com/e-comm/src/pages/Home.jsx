@@ -5,34 +5,61 @@ import "../styles/Home.css";
 import { Link } from "react-router-dom";
 import Services from "../services/Services";
 import ProductsList from "../components/Ui/ProductsList";
-import products from "./../assets/data/products";
+// import products from "./../assets/data/products";
 import counterImg from "./../assets/images/counter-timer-img.png";
 import Clock from "../components/Ui/Clock";
+import axios from "axios";
 // import {myData} from '../assets/data/data.json'
 function Home() {
-  const [trendingProducts, setTrendingProducts] = useState([]);
-  const [famousProducts, setFamousProducts] = useState([]);
-  const [mobileProducts, setMobileProducts] = useState([]);
-  const [wirelessProducts, setWirelessProducts] = useState([]);
+  // const [trendingProducts, setTrendingProducts] = useState([]);
+  // const [famousProducts, setFamousProducts] = useState([]);
+  // const [mobileProducts, setMobileProducts] = useState([]);
+  // const [wirelessProducts, setWirelessProducts] = useState([]);
+  const [data, setData] = useState([]);
   const year = new Date().getFullYear();
+  // useEffect(() => {
+  //   const FilteredTrendingProducts = products.filter(
+  //     (item) => item.category === "chair"
+  //   );
+  //   const FilteredFamousProducts = products.filter(
+  //     (item) => item.category === "sofa"
+  //   );
+  //   const FilterdMobileProducts = products.filter(
+  //     (item) => item.category === "mobile"
+  //   );
+  //   const FilteredWirelessProducts = products.filter(
+  //     (item) => item.category === `watch`
+  //   );
+  //   setFamousProducts(FilteredFamousProducts);
+  //   setTrendingProducts(FilteredTrendingProducts);
+  //   setMobileProducts(FilterdMobileProducts);
+  //   setWirelessProducts(FilteredWirelessProducts);
+  // }, []);
+  function getData() {
+    axios
+      .get("https://fakestoreapi.com/products")
+      .then((res) => {
+        console.log(res.data);
+      })
+      .then((res) => {
+        setData(res.data);
+      });
+  }
+
   useEffect(() => {
-    const FilteredTrendingProducts = products.filter(
-      (item) => item.category === "chair"
-    );
-    const FilteredFamousProducts = products.filter(
-      (item) => item.category === "sofa"
-    );
-    const FilterdMobileProducts = products.filter(
-      (item) => item.category === "mobile"
-    );
-    const FilteredWirelessProducts = products.filter(
-      (item) => item.category === `watch`
-    );
-    setFamousProducts(FilteredFamousProducts);
-    setTrendingProducts(FilteredTrendingProducts);
-    setMobileProducts(FilterdMobileProducts);
-    setWirelessProducts(FilteredWirelessProducts);
+    getData();
   }, []);
+
+  // const setAllData = (id, image, price, title, rating) => {
+  //   const allData = {
+  //     id: id,
+  //     image: image,
+  //     price: price,
+  //     title: title,
+  //     rating: rating,
+  //   };
+  //   return data;
+  // };
 
   // console.log(myData)
   return (
@@ -63,7 +90,7 @@ function Home() {
             <h2>All Chairs</h2>
           </div>
           <div className="products-list">
-            <ProductsList data={trendingProducts} />
+            <ProductsList data={data} />
           </div>
         </section>
         <section className="home-trend">
@@ -71,7 +98,7 @@ function Home() {
             <h2>Famous Sofas</h2>
           </div>
           <div className="products-list">
-            <ProductsList data={famousProducts} />
+            <ProductsList data={data} />
           </div>
         </section>
         <section className="timer-count">
@@ -94,7 +121,7 @@ function Home() {
             <h2>Sale Mobiles</h2>
           </div>
           <div className="products-list">
-            <ProductsList data={mobileProducts} />
+            <ProductsList data={data} />
           </div>
         </section>
         <section className="home-trend">
@@ -102,7 +129,7 @@ function Home() {
             <h2>Sale Wireless</h2>
           </div>
           <div className="products-list">
-            <ProductsList data={wirelessProducts} />
+            <ProductsList data={data} />
           </div>
         </section>
       </Helmete>

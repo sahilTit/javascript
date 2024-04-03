@@ -28,10 +28,12 @@ const router = createBrowserRouter(
       <Route path="login" exact element={<LoginPage />} />
       <Route path="/about" element={<About />} />
 
-      <Route element={<RequireAuth />}>
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/profile" element={<Profile />} />
+      <Route element={<RequireAuth allowedRoles={[]} />}>
         <Route path="/admin" element={<AdminNav />} />
+      </Route>
+      <Route element={<RequireAuth allowedRoles={[]} />}>
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/cart" element={<Cart />} />
       </Route>
     </Route>
   )
